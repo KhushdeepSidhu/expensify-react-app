@@ -33,7 +33,8 @@ module.exports = {
     // webpack-dev-server configuration
     devServer: {
         contentBase: path.resolve ( __dirname, 'public' ),
-        publicPath: '/scripts/'
+        publicPath: '/scripts/',
+        historyApiFallback: true
     },
 
     // configure source map

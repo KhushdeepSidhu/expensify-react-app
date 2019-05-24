@@ -2,6 +2,8 @@
   "name": "expensify-app",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": "git@github.com:KhushdeepSidhu/expensify-react-app.git",
+  "author": "<khushdeep009@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev-server": "webpack-dev-server --mode development",
@@ -20,6 +22,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-modal": "3.8.1",
+    "react-router-dom": "5.0.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "validator": "10.11.0",
