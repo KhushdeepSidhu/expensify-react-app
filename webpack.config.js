@@ -8,7 +8,7 @@ module.exports = {
         filename: 'bundle.js'
     },
 
-    // babel configuratiom
+    // babel configuration
     module: {
         rules: [ {
             test: /\.js$/,
