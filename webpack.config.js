@@ -11,15 +11,9 @@ module.exports = {
     // babel configuration
     module: {
         rules: [ {
+            loader: 'babel-loader',
             test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: [ 'env', 'react' ],
-                    plugins: [ 'transform-class-properties', 'transform-object-rest-spread' ]
-                }
-            }
+            exclude: /node_modules/
         }, {
             test: /\.s?css$/,
             use: [
@@ -41,3 +35,24 @@ module.exports = {
     devtool: 'source-map'
 
 }
+
+
+
+
+
+
+
+
+
+//  Jest is not working ( unable to process the import statement ) when we do the babel configuration inside webpack but works when use the configuration inside .babelrc
+    // {
+    //     test: /\.js$/,
+    //     exclude: /node_modules/,
+    //     use: {
+    //         loader: 'babel-loader',
+    //         options: {
+    //             presets: [ 'env', 'react' ],
+    //             plugins: [ 'transform-class-properties', 'transform-object-rest-spread' ]
+    //         }
+    //     }
+    // }
