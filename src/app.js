@@ -17,6 +17,8 @@ store.dispatch ( addExpense ( { description: 'Gas Bill', amount: 6000, createdAt
 
 store.dispatch ( addExpense ( { description: 'Rent', amount: 109500, createdAt: 400 } ) )
 
+console.log ( 'Jattan de mundeh a ' )
+
 const jsx = (
     <Provider store = { store } >
         <AppRouter />
