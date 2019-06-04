@@ -12,12 +12,6 @@ import './firebase/firebase'
 
 const store = configureStore ()
 
-store.dispatch ( addExpense ( { description: 'Water Bill', amount: 9500, createdAt: 800 } ) )
-
-store.dispatch ( addExpense ( { description: 'Gas Bill', amount: 6000, createdAt: 200 } ) )
-
-store.dispatch ( addExpense ( { description: 'Rent', amount: 109500, createdAt: 400 } ) )
-
 const jsx = (
     <Provider store = { store } >
         <AppRouter />
