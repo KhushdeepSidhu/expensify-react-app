@@ -8,6 +8,7 @@ import { setTextFilter } from './actions/filters'
 import 'normalize.css'
 import './styles/styles.scss'
 import 'react-dates/lib/css/_datepicker.css'
+import './firebase/firebase'
 
 const store = configureStore ()
 
@@ -16,8 +17,6 @@ store.dispatch ( addExpense ( { description: 'Water Bill', amount: 9500, created
 store.dispatch ( addExpense ( { description: 'Gas Bill', amount: 6000, createdAt: 200 } ) )
 
 store.dispatch ( addExpense ( { description: 'Rent', amount: 109500, createdAt: 400 } ) )
-
-console.log ( 'Jattan de mundeh a ' )
 
 const jsx = (
     <Provider store = { store } >
