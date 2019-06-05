@@ -1,6 +1,15 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import { removeExpense, addExpense, startAddExpense, editExpense, setExpenses, startSetExpenses, startRemoveExpense } from '../../actions/expenses'
+import { 
+    removeExpense, 
+    addExpense, 
+    startAddExpense, 
+    editExpense, 
+    setExpenses, 
+    startSetExpenses, 
+    startRemoveExpense,
+    startEditExpense 
+} from '../../actions/expenses'
 import expenses from '../fixtures/expenses'
 import database from '../../firebase/firebase'
 
@@ -39,23 +48,45 @@ test('should remove expense from firebase', ( done ) => {
     } )
 })
 
-
-test('should return editExpense action object ', () => {
-    const action = editExpense ( {
-        id: 'sdhskjfdkjfnhdskhf',
-        updates: {
-            description: 'New description',
-            amount: 56
-        }
+test('should edit expense in firebase', ( done ) => {
+    const store = createMockStore ( {} )
+    const id = expenses [ 2 ].id
+    const updates = {
+        description: 'New Credit card',
+        note: "This is a new one",
+        amount: 345678,
+        createdAt: 700
+    }
+    store.dispatch ( startEditExpense ( { id, updates} ) ).then ( () => {
+        const actions = store.getActions ()
+        expect ( actions [ 0 ] ).toEqual ( {
+            type: 'EDIT_EXPENSE',
+            id,
+            updates
+        } )
+        return database.ref ( `expenses/${id}` ).once ( 'value' )
+    } ).then ( ( snapshot ) => {
+        expect ( snapshot.val () ).toEqual ( updates )
+        done ()
     } )
+})
+
+
+
+test('should setup editExpense action object correctly ', () => {
+    const id = expenses [ 2 ].id
+    const updates = {
+        description: 'New Credit card',
+        note: "This is a new one",
+        amount: 345678,
+        createdAt: 700
+    }
+    const action = editExpense ( id, updates )
     expect ( action ).toEqual ( {
         type: 'EDIT_EXPENSE',
-        id: 'sdhskjfdkjfnhdskhf',
-        updates: {
-            description: 'New description',
-            amount: 56
-        }
-    } )
+        id,
+        updates
+    } )    
 })
 
 test('should return action object with provided values', () => {
