@@ -5,7 +5,6 @@ import ExpenseSummary from './ExpenseSummary'
 
 const ExpenseDashoardPage = () => (
     <div>
-        <p>This is from the dashboard page component.</p>
         <ExpenseSummary />
         <ExpenseListFilters />
         <ExpenseList />
