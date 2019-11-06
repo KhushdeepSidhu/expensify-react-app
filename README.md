@@ -83,3 +83,4 @@ npm run test
 # or yarn
 yarn run test
 ```
+#### App is deployed on Heroku production environment. App can be accessed on this url - https://expensify-react-app-khushdeep.herokuapp.com/
