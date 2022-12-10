@@ -30,7 +30,7 @@
     "enzyme": "3.0.0",
     "enzyme-adapter-react-16": "1.0.0",
     "enzyme-to-json": "3.0.1",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "firebase": "6.1.0",
     "history": "4.9.0",
     "mini-css-extract-plugin": "0.7.0",
